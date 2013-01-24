@@ -31,10 +31,12 @@ if (gameVersion >= 2) {
 			while(gateNum < 3)	{
 				
 				console.log("Loading ... Please wait");
+				
+				//changes the value of the global gateNum				
 				gateNum++;	
 				
 			}
-			console.log("The gate "+ gateNum +" is now available for you.");
+			console.log("Gate "+ gateNum +" is now available for you.");
 			console.log("Please proceed to your ship.");
 	}
 	

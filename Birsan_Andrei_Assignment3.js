@@ -5,8 +5,8 @@
 //Global Variables Declaration
 
 var	gameName = "Nagra Space Flight Simulator",
-		gameVersion = 2,															// ==> switch
-		gameSubVersion = 3,														// ==> switch
+		gameVersion = 2,															
+		gameSubVersion = 3,														
 		gateNum = 0,
 		drivingStation = 2,
 		
@@ -54,15 +54,90 @@ else {
 }
 
 
-//Implementation of obj. userInfo
+//Implementation of obj. userInfo---------------------------------------------------------------------
 var userInfo = {
 			
-			userName:    "Andrei",
+			//properties 
+			userName:     "Andrei",
 			firstTime:    true,
-			address:    ["City: Los Angeles", "State: California", "Country: USA", "Planet: Earth", "System: Sol", "Galaxy: Milky-Way"],
-			gameSaved:     1,
-			shipSpecs:  { model: "Galactic Intrepid", speed: "W.6", firePower: [ "2 Missile Launchers", "2 Laser Canons", "1 Omni-Tool" ] } 
+			address:      ["City: Los Angeles", "State: California", "Country: USA", "Planet: Earth", "System: Sol", "Galaxy: Milky-Way"],
+			gameSaved:    1,
+			shipSpecs:    { model: "Galactic Intrepid", speed: "W.6", firePower: [ "2 Missile Launchers", "2 Laser Canons", "1 Omni-Tool" ] },
+			
+			//methods -----------------------------------------------------------------------------------
+			//method procedure
+			firstInter:   function (userName) {
+				
+				console.log("Nagra:			"+ userName +", your first flight practice is in the \"Vijan\" asteroid field.");
+				console.log("Nagra:			It might seem easy at first, but most pilots crash their ships in here.");
+				console.log(+ userName +":			Puff... I'm better than that! ...");	
+				
+			},
+			
+			//method function
+			flyingMethod: function (num, bool) {
+				
+				//local variables
+				var num_ = num;
+				var bool_ = bool;
+				
+				//bool argument setter function 
+				this.setBool = function(bool) {
+    				bool_ = bool;
+ 				};
+				
+				//bool argument getter function
+				this.getBool = function() {
+    				return bool_;
+  				};
+  				
+  				for (num_ ; num_ >=1; num_ --) {
+  					
+  					//do 	
+  					console.log("Nagra:			"+ this.userName +", press the 'Acceleration' button...");
+  					console.log("Nagra:			Good ... now, turn left ...");
+  					console.log("Nagra:			Now, turn right ...");
+  					
+  					//conditional 
+  					if (bool_ === true) {
+							
+							
+							console.log("Nagra:			The flight lesson is over, please return the ship to  gate number "+ gateNum +".");
+							return 3;
+							 						
+  						}
+  					
+  					
+  					else {
+							  							
+  							//nested for loop  							
+  							for (var i = 1; i < 3; i++) {
+  								
+								 								
+  								console.log("Nagra:			"+ userInfoSave.userName + ", asteroid ahead! Use your laser canons to destroy it.");	
+  								console.log("Andrei:			Pew, pew, pew!");	
+  								console.log("The total number of shots is: "+ (i * 3));	
+  							}
+  							
+  							return true;	
+							
+							
+  					}
+  					
+  				}
+  				
+  				
+			},
 };
 
-console.log(userInfo);
+
+//Call methods and functions --------------------------------------------------------------------------
+
+//method procedure
+var firstInterCatch = userInfo.firstInter(userInfo.userName);
+
+//method function 
+var flyingMethodCatch = userInfo.flyingMethod(2, false);
+
+
 		

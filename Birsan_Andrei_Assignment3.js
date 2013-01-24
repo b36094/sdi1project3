@@ -52,4 +52,17 @@ else {
 	console.log("There is a newer version of the program available for download. Please update before playing.");	
 	
 }
+
+
+//Implementation of obj. userInfo
+var userInfo = {
+			
+			userName:    "Andrei",
+			firstTime:    true,
+			address:    ["City: Los Angeles", "State: California", "Country: USA", "Planet: Earth", "System: Sol", "Galaxy: Milky-Way"],
+			gameSaved:     1,
+			shipSpecs:  { model: "Galactic Intrepid", speed: "W.6", firePower: [ "2 Missile Launchers", "2 Laser Canons", "1 Omni-Tool" ] } 
+};
+
+console.log(userInfo);
 		

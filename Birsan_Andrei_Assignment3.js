@@ -94,7 +94,7 @@ var userInfo = {
   				for (num_ ; num_ >=1; num_ --) {
   					
   					//do 	
-  					console.log("Nagra:			"+ this.userName +", press the 'Acceleration' button...");
+  					console.log("Nagra:			"+ this.userName +", when ready, press the 'Acceleration' button ...");
   					console.log("Nagra:			Good ... now, turn left ...");
   					console.log("Nagra:			Now, turn right ...");
   					

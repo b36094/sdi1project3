@@ -11,9 +11,9 @@ var	gameName = "Nagra Space Flight Simulator",
 		drivingStation = 2,
 		
 		userInfoSave = { "userName": "Andrei", 
-							  "userMiles": 0, 
+							  "userMiles": 37, 
 							  "userLocation": "Milky-Way",
-							  "shipName": "" 
+							  "shipName": "Lenora" 
 		};
 		
 
@@ -86,7 +86,7 @@ var userInfo = {
     				bool_ = bool;
  				};
 				
-				//bool argument getter function
+				//bool argument getter function ==> alternative
 				this.getBool = function() {
     				return bool_;
   				};
@@ -128,9 +128,31 @@ var userInfo = {
   				
   				
 			},
+			
+			
 };
 
+//function mixString
+var mixString = function () {
+	var stringNoun = "Congratulations, ",
+	     stringPredicat = "you completed ",
+	     stringComplement = "your flight training.";
+	     
+	     return [stringNoun, stringPredicat, stringComplement];
+		
+}
 
+
+//function conversion JSON
+var jsonConv = function (mixString_return) {
+		console.log("Nagra:			Congratulations! Your training is complete.");		
+		console.log("Nagra:			While you're taking the ship back to gate "+ gateNum +", I'm going to save your user profile information into our JSON data base");
+		console.log("Nagra:			Please hold on ...");
+		
+		//JSON conversion
+		var jsonObj = JSON.stringify(userInfoSave);	
+		console.log("Nagra:			Done. Please verify your information: "+ jsonObj);
+}
 //Call methods and functions --------------------------------------------------------------------------
 
 //method procedure
@@ -139,5 +161,10 @@ var firstInterCatch = userInfo.firstInter(userInfo.userName);
 //method function 
 var flyingMethodCatch = userInfo.flyingMethod(2, false);
 
+//mixString function
+var mixStringCatch = mixString();
+
+//function json
+var jsonConvCatch = jsonConv(mixStringCatch);
 
 		

@@ -70,7 +70,7 @@ var userInfo = {
 				
 				console.log("Nagra:			"+ userName +", your first flight practice is in the \"Vijan\" asteroid field.");
 				console.log("Nagra:			It might seem easy at first, but most pilots crash their ships in here.");
-				console.log(+ userName +":			Puff... I'm better than that! ...");	
+				console.log(userName + ":			Puff... I'm better than that! ...");	
 				
 			},
 			
@@ -134,24 +134,41 @@ var userInfo = {
 
 //function mixString
 var mixString = function () {
-	var stringNoun = "Congratulations, ",
-	     stringPredicat = "you completed ",
-	     stringComplement = "your flight training.";
-	     
-	     return [stringNoun, stringPredicat, stringComplement];
+	var stringNoun = " Diploma ",
+	     stringPredicat = "goes ",
+	     stringComplement = "here.";
+	     var arrayString = [stringNoun, stringPredicat, stringComplement];
+	     return arrayString;
 		
 }
 
 
+//function Obj
+var objChange = function (obj) {
+	var copyObj = obj;
+	
+	//future modifications can get into this filter
+	
+	return copyObj;
+}
+
 //function conversion JSON
 var jsonConv = function (mixString_return) {
-		console.log("Nagra:			Congratulations! Your training is complete.");		
-		console.log("Nagra:			While you're taking the ship back to gate "+ gateNum +", I'm going to save your user profile information into our JSON data base");
-		console.log("Nagra:			Please hold on ...");
+		
+		var tempMessage = mixString_return;
+		userInfoSave.certificate = [tempMessage];		
 		
 		//JSON conversion
-		var jsonObj = JSON.stringify(userInfoSave);	
-		console.log("Nagra:			Done. Please verify your information: "+ jsonObj);
+		var jsonObj = JSON.stringify(objPushCatch);	
+		
+		
+		//output
+		console.log("Nagra:			Congratulations! Your training is complete.");		
+		console.log("Nagra:			While you're taking the ship back to gate "+ gateNum +", I'm going to save your user profile information into our JSON data base.");
+		console.log("Nagra:			Please hold on ...");
+		console.log("Nagra:			Done. Please verify your JSON information: "+ jsonObj);
+		
+		return jsonObj;
 }
 //Call methods and functions --------------------------------------------------------------------------
 
@@ -164,7 +181,13 @@ var flyingMethodCatch = userInfo.flyingMethod(2, false);
 //mixString function
 var mixStringCatch = mixString();
 
+
+//function objPush
+var objPushCatch = objChange (userInfoSave)
+
 //function json
 var jsonConvCatch = jsonConv(mixStringCatch);
+
+
 
 		
